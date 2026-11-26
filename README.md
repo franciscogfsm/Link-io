@@ -1,40 +1,54 @@
 <div align="center">
 
+<img src="client/public/favicon.png" width="88" alt="LINK.IO logo">
+
 # LINK.IO
 
-Build energy networks in an anti-gravity arena. A real-time multiplayer .io game.
+**Conquer the network.**
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" alt="React">
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
-<img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite">
-<img src="https://img.shields.io/badge/Node.js-5FA04E?style=flat&logo=nodedotjs&logoColor=white" alt="Node.js">
-<img src="https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white" alt="Express">
-<img src="https://img.shields.io/badge/Socket.IO-010101?style=flat&logo=socketdotio&logoColor=white" alt="Socket.IO">
-<img src="https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white" alt="Vercel">
+A real-time multiplayer .io game in your browser.<br>
+Link nodes into energy networks, cut your rivals' links and own the arena.
 
-<sub>
-<a href="DEPLOY.md">Deployment</a>
-</sub>
+[![Stars](https://img.shields.io/github/stars/franciscogfsm/link-io?style=flat&color=E3B341)](https://github.com/franciscogfsm/link-io/stargazers)
+[![Licence](https://img.shields.io/github/license/franciscogfsm/link-io?style=flat&label=licence&color=A42E2B)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/franciscogfsm/link-io?style=flat&label=updated&color=2EA043)](https://github.com/franciscogfsm/link-io/commits)
+[![Top language](https://img.shields.io/github/languages/top/franciscogfsm/link-io?style=flat&color=0969DA)](https://github.com/franciscogfsm/link-io)
+[![Play](https://img.shields.io/badge/play-in%20browser-00E5FF?style=flat&logo=socketdotio&logoColor=black)](https://link-io-ten.vercel.app)
 
-</div>
+### [Play now, free](https://link-io-ten.vercel.app)
+
+<sub>No download · No account · Runs in any modern browser</sub>
 
 <br>
 
-Players move through an anti-gravity arena, linking nodes into energy networks and breaking their
-rivals' links. The server runs the game; the client renders it on a canvas with interpolation, particles and
-sound.
+<img src="docs/assets/screenshot.webp" width="820" alt="LINK.IO: conquer the network">
 
-## Start
+</div>
+
+## How to play
+
+| 1. Drop in | 2. Link | 3. Sabotage |
+| --- | --- | --- |
+| Pick a name and you're matched into a live room with other players. | Move through the anti-gravity arena and link the nodes you own into an energy network. | Break your rivals' links to cut their energy, defend your own, and grow the biggest network in the arena. |
+
+## What's inside
+
+- **Server-authoritative.** The game loop runs on the server at 30 ticks a second, with anti-cheat checks on every link.
+- **Smooth on any connection.** The client interpolates between ticks, with particles and sound on a canvas renderer.
+- **Rooms and matchmaking.** Socket.IO rooms, created and filled automatically.
+- **One codebase, typed end to end.** Client and server share `shared/types.ts`.
+
+## Run it
 
 Needs Node 18 or newer.
 
 ```bash
-npm run install:all     # root, client and server
-npm run dev             # server and client together
+npm run install:all
+npm run dev
 ```
 
 | | Address |
-|---|---|
+| --- | --- |
 | Client | http://localhost:5173 |
 | Server | http://localhost:3001 |
 | Health check | http://localhost:3001/health |
@@ -45,9 +59,13 @@ npm run dev             # server and client together
 client/src/game/       renderer, camera, input, interpolation, particles, audio
 client/src/screens/    landing, menu, game and game-over screens
 client/src/network/    Socket.IO client
-server/src/game/       authoritative game loop and rules
+server/src/game/       authoritative game loop, rules and anti-cheat
 server/src/rooms/      matchmaking and rooms
 shared/types.ts        types shared by client and server
 ```
 
-[`DEPLOY.md`](DEPLOY.md) covers production builds and hosting the client and the server separately.
+[`DEPLOY.md`](DEPLOY.md) covers production builds and hosting the client and server separately.
+
+## Licence
+
+[MIT](LICENSE) © Francisco Martins
